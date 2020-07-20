@@ -1,14 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-const db = require('../models/QuestionModel');
+const {
+  Create,
+  Index,
+  Update,
+  Delete,
+} = require('../controllers/QuestionController');
 
-router.get('/', (req, res) => {});
+router.get('/', Index);
 
-router.post('/', (req, res) => {});
+router.post('/', Create);
 
-router.put('/:id', (req, res) => {});
+router.put('/:id', Update);
 
-router.delete('/:id', (req, res) => {});
+router.delete('/:id', Delete);
 
 module.exports = router;
