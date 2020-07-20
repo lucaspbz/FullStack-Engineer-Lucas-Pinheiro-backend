@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const db = require('../models/QuestionModel');
+
 router.get('/', (req, res) => {});
 
 router.post('/', (req, res) => {});

@@ -1,17 +1,22 @@
 const mongoose = require('mongoose');
 
 let schema = mongoose.Schema({
-  description: { type: String, required: true },
-  value: { type: Number, required: true },
-  category: { type: String, required: true },
-  year: { type: Number, required: true },
-  month: { type: Number, required: true },
-  day: { type: Number, required: true },
-  yearMonth: { type: String, required: true },
-  yearMonthDay: { type: String, required: true },
-  type: { type: String, required: true },
+  alternativas: [
+    {
+      letra: { type: String, required: true },
+      correta: { type: Boolean, required: true },
+      texto: { type: String, required: true },
+    },
+  ],
+  vestibular: { type: String, required: true },
+  materia: { type: String, required: true },
+  ano: { type: Number, required: true },
+  numeroQuestao: { type: Number, required: true },
+  resolucao: { type: String, required: true },
+  enunciado: { type: String, required: true },
+  disponivel: { type: Boolean, required: true },
 });
 
-const QuestionModel = mongoose.model('transaction', schema);
+const QuestionModel = mongoose.model('question', schema);
 
 module.exports = QuestionModel;
