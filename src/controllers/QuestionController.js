@@ -2,7 +2,7 @@ const db = require('../models/QuestionModel');
 
 const Index = async (_, res) => {
   try {
-    const data = await db.find();
+    const data = await db.find().sort({ numeroQuestao: 1 });
     res.send(data);
   } catch (error) {
     res.status(404).json({ error: error.message });
