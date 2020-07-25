@@ -20,10 +20,10 @@ const Create = async (req, res) => {
 };
 
 const Update = async (req, res) => {
-  const id = req.params.id;
+  const _id = req.params.id;
   const data = req.body;
   try {
-    const updatedData = await db.findByIdAndUpdate(id, data, {
+    const updatedData = await db.findByIdAndUpdate({ _id }, data, {
       useFindAndModify: false,
       new: true,
     });
